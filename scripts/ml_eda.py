@@ -7,7 +7,8 @@ import seaborn as sns
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import confusion_matrix, classification_report, roc_curve, auc
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import confusion_matrix, classification_report, roc_curve, auc, accuracy_score
 
 # Color Palette
 colors = {
@@ -144,6 +145,34 @@ def lr_features_evaluation(df_processed, selected_col, target_column, test_size=
         'mean_cv_score': np.mean(cv_scores),
         'coef_df': coef_df
     }
+
+# Function 5: Elbow Method KNN
+def plot_elbow_method_knn(X_train, y_train, X_test, y_test, k_range=30):
+    test_error_rates = []
+
+    for k in range(1, k_range + 1):
+        # Initialize the KNN model
+        model = KNeighborsClassifier(n_neighbors=k)
+        
+        # Fit the model 
+        model.fit(X_train, y_train)
+        
+        # Predict 
+        y_pred_test = model.predict(X_test)
+        
+        # Calculate the test error rate
+        test_error = 1 - accuracy_score(y_test, y_pred_test)
+        test_error_rates.append(test_error)
+
+    # Plot the results
+    plt.figure(figsize=(10, 6))
+    plt.plot(range(1, k_range + 1), test_error_rates, marker='o', linestyle='-', color=colors['blue'])
+    plt.xticks(range(1, k_range + 1, max(1, k_range // 10)))  
+    plt.title("Elbow Method for Optimal K", fontsize=16)
+    plt.xlabel("Number of Neighbors (k)", fontsize=14)
+    plt.ylabel("Test Error Rate", fontsize=14)
+    plt.grid(True, linestyle='--', alpha=0.6)
+    plt.show()
 
 
 
