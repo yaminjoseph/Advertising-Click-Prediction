@@ -8,6 +8,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.linear_model import LogisticRegression
 from sklearn.neighbors import KNeighborsClassifier
+from sklearn.tree import DecisionTreeClassifier, plot_tree
 from sklearn.metrics import confusion_matrix, classification_report, roc_curve, auc, accuracy_score
 
 # Color Palette
@@ -174,6 +175,20 @@ def plot_elbow_method_knn(X_train, y_train, X_test, y_test, k_range=30):
     plt.grid(True, linestyle='--', alpha=0.6)
     plt.show()
 
+# Function 6: Decision Tree Visualization
+def decision_tree_display(model, feature_names, class_names, plot_title="Decision Tree Visualization"):
+    fig, ax = plt.subplots(figsize=(15, 10))
 
+    # Plot decision tree
+    plot_tree(model, filled=True, feature_names=feature_names, class_names=class_names, impurity=False, ax=ax)
+
+    # Customizing the plot
+    ax.set_title("Decision Tree", fontsize=16, weight='bold', loc='left', pad=15, color=colors['blue'])
+    ax.spines[['top', 'right']].set_visible(False)  # Hide top and right spines
+    ax.grid(which="major", color=colors['gray'], alpha=0.4, linestyle='-', linewidth=0.5)  # Add grid
+
+    # Show the plot
+    plt.tight_layout()
+    plt.show()
 
 
