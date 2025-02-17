@@ -16,7 +16,9 @@ def run_pipeline():
     4. MODEL TRAINING: Train the model on the prepared data.
     5. OUTPUT: Indicate the completion of model training.
     """
-    
+    # Output
+    print("Running Training Pipeline...")
+
     # Load Data
     df = load_data()
     
@@ -31,7 +33,7 @@ def run_pipeline():
     model = train_model(X, y)
 
     # Output
-    print("Model Training Complete!")
+    print("Model Training Complete! Model Saved.")
 
 if __name__ == "__main__":
     run_pipeline()

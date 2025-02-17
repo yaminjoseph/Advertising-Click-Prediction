@@ -15,15 +15,15 @@ sys.path.append(str(PACKAGE_ROOT))
 # FUNCTION TO COLLECT USER INPUT
 def get_user_input():
     """Collects user input for model predictions."""
-    print("Enter the following details:")
+    print("Enter the Following Details:")
 
-    daily_internet_usage = float(input("Daily Internet Usage: "))
-    daily_time_spent = float(input("Daily Time Spent on Site: "))
-    area_income = float(input("Area Income: "))
+    daily_internet_usage = float(input("Daily Internet Usage (Minutes): "))
+    daily_time_spent = float(input("Daily Time Spent on Website (Minutes): "))
+    area_income = float(input("USD Income (Yearly): "))
     age = int(input("Age: "))
     male = int(input("Male (1 for Yes, 0 for No): "))
-    north_america = int(input("North America (1 for Yes, 0 for No): "))
-    asia = int(input("Asia (1 for Yes, 0 for No): "))
+    north_america = int(input("North America Region(1 for Yes, 0 for No): "))
+    asia = int(input("Asia Region (1 for Yes, 0 for No): "))
 
     # Feature transformation: creating a squared income feature
     area_income_square = area_income ** 2

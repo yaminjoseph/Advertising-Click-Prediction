@@ -4,6 +4,7 @@ import sys
 import pickle
 import numpy as np
 from pathlib import Path
+from src.config import MODEL_PATH
 from sklearn.preprocessing import StandardScaler
 
 
