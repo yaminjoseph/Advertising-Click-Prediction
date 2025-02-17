@@ -5,7 +5,7 @@ from src.model_handling import train_model
 from src.preprocessing import feature_engineering, scale_features
 
 # PIPELINE 
-def run_pipeline():
+def run_training():
     """
     RUN THE FULL MACHINE LEARNING PIPELINE
 
@@ -36,5 +36,5 @@ def run_pipeline():
     print("Model Training Complete! Model Saved.")
 
 if __name__ == "__main__":
-    run_pipeline()
+    run_training()
 
