@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>AD CLICK PREDICTION</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            margin: 0;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #6a11cb;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="radio"] {
+            margin: 0 10px;
+        }
+
+        .button-group {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        input[type="submit"], input[type="reset"] {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #6a11cb;
+        }
+
+        input[type="reset"] {
+            background-color: #2575fc;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #5a0fb4;
+        }
+
+        input[type="reset"]:hover {
+            background-color: #1f66e5;
+        }
+
+        h3 {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>AD CLICK PREDICTION</h2>
+        <form action="/predict" method="POST">
+            <table>
+                <tr>
+                    <td>DAILY INTERNET USAGE</td>
+                    <td><input type="text" name="Daily Internet Usage" placeholder="Minutes" required /></td>
+                </tr>
+                <tr>
+                    <td>DAILY TIME SPENT ON WEBSITE</td>
+                    <td><input type="text" name="Daily Time Spent on Site" placeholder="Minutes" required /></td>
+                </tr>
+                <tr>
+                    <td>INCOME</td>
+                    <td><input type="text" name="Area Income Square" placeholder="USD (Yearly)" required /></td>
+                </tr>
+                <tr>
+                    <td>AGE</td>
+                    <td><input type="text" name="Age" placeholder="Age" required /></td>
+                </tr>
+                <tr>
+                    <td>MALE</td>
+                    <td>
+                        <input type="radio" name="Male" value="1" required> Yes
+                        <input type="radio" name="Male" value="0" required> No
+                    </td>
+                </tr>
+                <tr>
+                    <td>NORTH AMERICA REGION</td>
+                    <td>
+                        <input type="radio" name="North America" value="1" required> Yes
+                        <input type="radio" name="North America" value="0" required> No
+                    </td>
+                </tr>
+                <tr>
+                    <td>ASIAN REGION</td>
+                    <td>
+                        <input type="radio" name="Asia" value="1" required> Yes
+                        <input type="radio" name="Asia" value="0" required> No
+                    </td>
+                </tr>
+            </table>
+            <div class="button-group">
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset" onclick="location.href='/'">
+            </div>
+        </form>
+        <h3>{{ prediction }}</h3>
+    </div>
+</body>
+
+</html>
+
+
