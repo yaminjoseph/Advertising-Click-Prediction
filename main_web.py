@@ -4,7 +4,7 @@ import pandas as pd
 from flask import Flask, render_template, request
 
 # Load App
-app = Flask(__name__, template_folder='html_templates')
+app = Flask(__name__, template_folder='html_templates', static_folder='html_static')
 
 # Load Model and Scaler
 models_directory = './models'
