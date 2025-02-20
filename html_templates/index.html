@@ -10,45 +10,36 @@
     <div class="container">
         <h2>AD CLICK PREDICTION</h2>
         <form action="/predict" method="POST">
-            <table>
-                <tr>
-                    <td>DAILY INTERNET USAGE</td>
-                    <td><input type="text" name="Daily Internet Usage" placeholder="Minutes" required /></td>
-                </tr>
-                <tr>
-                    <td>DAILY TIME SPENT ON WEBSITE</td>
-                    <td><input type="text" name="Daily Time Spent on Site" placeholder="Minutes" required /></td>
-                </tr>
-                <tr>
-                    <td>INCOME</td>
-                    <td><input type="text" name="Area Income Square" placeholder="USD (Yearly)" required /></td>
-                </tr>
-                <tr>
-                    <td>AGE</td>
-                    <td><input type="text" name="Age" placeholder="Age" required /></td>
-                </tr>
-                <tr>
-                    <td>MALE</td>
-                    <td>
-                        <input type="radio" name="Male" value="1" required> Yes
-                        <input type="radio" name="Male" value="0" required> No
-                    </td>
-                </tr>
-                <tr>
-                    <td>NORTH AMERICA REGION</td>
-                    <td>
-                        <input type="radio" name="North America" value="1" required> Yes
-                        <input type="radio" name="North America" value="0" required> No
-                    </td>
-                </tr>
-                <tr>
-                    <td>ASIAN REGION</td>
-                    <td>
-                        <input type="radio" name="Asia" value="1" required> Yes
-                        <input type="radio" name="Asia" value="0" required> No
-                    </td>
-                </tr>
-            </table>
+            <label for="daily_internet_usage">DAILY INTERNET USAGE</label>
+            <input type="text" name="Daily Internet Usage" placeholder="Minutes" required />
+
+            <label for="daily_time_spent">DAILY TIME SPENT ON WEBSITE</label>
+            <input type="text" name="Daily Time Spent on Site" placeholder="Minutes" required />
+
+            <label for="area_income">INCOME</label>
+            <input type="text" name="Area Income Square" placeholder="USD (Yearly)" required />
+
+            <label for="age">AGE</label>
+            <input type="text" name="Age" placeholder="Age" required />
+
+            <label for="male">MALE</label>
+            <div class="radio-group">
+                <input type="radio" name="Male" value="1" required> Yes
+                <input type="radio" name="Male" value="0" required> No
+            </div>
+
+            <label for="north_america">NORTH AMERICA REGION</label>
+            <div class="radio-group">
+                <input type="radio" name="North America" value="1" required> Yes
+                <input type="radio" name="North America" value="0" required> No
+            </div>
+
+            <label for="asia">ASIAN REGION</label>
+            <div class="radio-group">
+                <input type="radio" name="Asia" value="1" required> Yes
+                <input type="radio" name="Asia" value="0" required> No
+            </div>
+
             <div class="button-group">
                 <input type="submit" value="Submit">
                 <input type="reset" value="Reset" onclick="location.href='/'">
@@ -59,6 +50,8 @@
 </body>
 
 </html>
+
+
 
 
 
