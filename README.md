@@ -42,6 +42,7 @@ python main_web.py  # Start Flask-based Prediction API (No Training)
 docker build -t ad-click-predictor .  # Build Docker image
 docker images  # List available Docker images
 docker run -d -p 5000:80 ad-click-predictor  # Run container in detached mode
+http://localhost:5000 # Run in Web Browser
 ```
 
 ---
