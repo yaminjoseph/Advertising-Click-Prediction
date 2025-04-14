@@ -9,7 +9,7 @@ conda activate pred-env  # Activate the environment
 
 ### 2. Navigate to Project Directory
 ```bash
-cd ../ad_click_prediction  # Change to source directory
+cd ../Advertising-Click-Prediction  # Change to source directory
 ```
 
 ### 3. Install Dependencies
